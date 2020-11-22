@@ -69,11 +69,11 @@ const apiKey = "AIzaSyC1HTCZ6mUEKFuuLHPLdE1zM2_Q7j0vxhk";
 const geocodeUrl = "https://maps.googleapis.com/maps/api/geocode/json?region=us&address=";
 
 export default async function (zipcode) {
-    let response = await fetch(`${geocodeUrl}${zipcode}&key=${apiKey}`);
-    
-    if (!response.ok)
-        throw new Error(`API call failed. ${response.status}`);
-    else 
-        return await response.json();
+   let response = await fetch(`${geocodeUrl}${zipcode}&key=${apiKey}`);
+   
+   if (!response.ok)
+       throw new Error(`API call failed. ${response.status}`);
+   else 
+       return await response.json();
 
 }

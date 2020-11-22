@@ -37,7 +37,7 @@ class ZipForm extends Component {
     const { onSubmit } = this.props; // the method from the App 
     onSubmit(zipcode); // the form calls a method on the App and passes the zipcode
     this.setState( {zipcode : ''} ); // clear the zipcode in the class (and on the web page)
-}
+  }
 }
 
 

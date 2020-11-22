@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import WeatherListItem from './WeatherListItem';
 import './App.css';
 
 class WeatherList extends Component {
@@ -7,11 +8,20 @@ class WeatherList extends Component {
     this.state = {};
   }
 
-  render() {
+  render () {
+    const { forecastDays, timezoneOffset, onDayClicked } = this.props;
     return (
-        <div>WeatherList</div>
+      <div className="weather-list flex-parent">
+        { forecastDays.map((forecastDay, index) =>
+          <WeatherListItem key={forecastDay.dt}
+          forecastDay={forecastDay} index={index} 
+          timezoneOffset={timezoneOffset}
+          onDayClicked={onDayClicked}
+          />
+        ) }
+      </div>
     );
-  }
+  } 
 }
 
 export default WeatherList;
